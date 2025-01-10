@@ -78,11 +78,11 @@ function Knob() {
     //按鈕處理
     const handleDefine = (e) => {
         if (e) e.preventDefault();
-        const inputAngle = document.getElementById("beginning").value;
-        const inputMin = document.getElementById("min-value").value;
-        const inputMax = document.getElementById("max-value").value;
+        const inputAngle = Number(document.getElementById("beginning").value);
+        const inputMin = Number(document.getElementById("min-value").value);
+        const inputMax = Number(document.getElementById("max-value").value);
 
-        if (inputAngle) setStartAngle(Number(inputAngle));
+        if (inputAngle) setStartAngle(inputAngle);
         if (inputMin || inputMax) {
             if (!inputMin || !inputMax) return alert("請輸入完整範圍!");
             if (inputMin >= inputMax) return alert("範圍最小值應恆小於最大值!");
