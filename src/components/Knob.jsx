@@ -8,7 +8,7 @@ function Knob({startAngle = 0, min = null, max = null}) {
 
     //進度值
     const displayValue = useMemo(() => {
-        if (!min || !max) {
+        if (min === null || max === null) {
             return `${Math.round((angle / 360) * 100)}%`; //角度百分比
         }
         else {

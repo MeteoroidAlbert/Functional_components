@@ -15,8 +15,8 @@ function App() {
         const inputMax = Number(document.getElementById("max-value").value);
 
         if (inputAngle) setStartAngle(inputAngle);
-        if (inputMin || inputMax) {
-            if (!inputMin || !inputMax) return alert("請輸入完整範圍!");
+        if (inputMin !=="" || inputMax !== "") {
+            if (inputMin === "" || inputMax === "") return alert("請輸入完整範圍!");
             if (inputMin >= inputMax) return alert("範圍最小值應恆小於最大值!");
             setMin(inputMin);
             setMax(inputMax);
